@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import RatingFeedBack from "./components/RatingFeedback";
+import RatingGrades from "./components/RatingGrades";
+import RatingMenu from "./components/RatingMenu";
 
 function App() {
+  const [feedbackSubmit, setFeedbackSubmit] = useState(false);
+  const [grade, setGrade] = useState(null);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {feedbackSubmit ? (
+        <RatingFeedBack grade={grade} />
+      ) : (
+        <RatingMenu
+          feedbackSubmit={feedbackSubmit}
+          setFeedbackSubmit={setFeedbackSubmit}
+          grade={grade}
+          setGrade={setGrade}
+        />
+      )}
+      {console.log(feedbackSubmit)}
     </div>
   );
 }
-
 export default App;
