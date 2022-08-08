@@ -36,7 +36,7 @@ function RatingMenu({ feedbackSubmit, setFeedbackSubmit, grade, setGrade }) {
         <div className="flex justify-center mt-6">
           <button
             onClick={() => setFeedbackSubmit(!feedbackSubmit)}
-            className="text-default-white  font-semibold bg-default-orange hover:text-default-orange hover:bg-default-white w-[100%] rounded-[5rem] py-[0.80rem]"
+            className="text-default-white text-lg font-semibold bg-default-orange hover:text-default-orange hover:bg-default-white w-[100%] rounded-[5rem] py-[0.80rem]"
           >
             SUBMIT
           </button>
